@@ -24,9 +24,13 @@ Completed in 1 day
 ## 💡 Evaluation Criteria
 
 ✅ **Functionality**: All API integrations should work correctly.
+
 ✅ **Code Quality**: Clean, well-structured, and documented code.
+
 ✅ **UI/UX Design**: A visually appealing and intuitive UI.
+
 ✅ **Performance**: Smooth performance without unnecessary API calls.
+
 ✅ **Error Handling**: Proper error messages for failures (e.g., login failure, API errors).
 
 ---
