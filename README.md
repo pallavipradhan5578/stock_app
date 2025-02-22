@@ -35,12 +35,6 @@ Completed in 1 day
 
 ---
 
-## 🔗 API Documentation & Postman Collection
-
-- Postman Collection (Link to be provided)
-
----
-
 ## 🛠 Tech Stack
 
 - State Management: Riverpod
@@ -57,11 +51,6 @@ Completed in 1 day
 - Dart SDK (3.7.9)
 - Android Studio / VS Code
 - A device/emulator for testing
-
----
-
-## 🎥 Demo Video
-(Provide the link to the demo video)
 
 ---
 
