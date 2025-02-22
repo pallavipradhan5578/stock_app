@@ -6,6 +6,7 @@ import 'package:stoke/features/home/model/search_model.dart';
 
 class HomeRepository {
   Future<List<SearchResponseDataModel>> searchStocks(String query) async {
+    print(query);
     final authToken = await SharedPref.getToken();
     final url = Uri.parse(
         'https://illuminate-production.up.railway.app/api/stocks/search?query=$query');

@@ -7,6 +7,7 @@ class CommonTextField extends StatefulWidget {
   final TextInputType keyboardType;
   final String? Function(String?)? validator;
   final Function(String? value)? onChanged;
+  final Icon? prefixIcon;
 
   const CommonTextField({
     super.key,
@@ -16,6 +17,7 @@ class CommonTextField extends StatefulWidget {
     this.keyboardType = TextInputType.text,
     this.validator,
     this.onChanged,
+    this.prefixIcon,
   });
 
   @override
@@ -39,14 +41,17 @@ class _CommonTextFieldState extends State<CommonTextField> {
       controller: widget.controller,
       obscureText: widget.isPassword ? _obscureText : false,
       keyboardType: widget.keyboardType,
+
       style: TextStyle(color: isDarkMode ? Colors.white : Colors.black),
       decoration: InputDecoration(
+
         hintText: widget.hintText,
         hintStyle: TextStyle(
           color: isDarkMode ? Colors.white54 : Colors.black38,
           fontWeight: FontWeight.w400,
           fontSize: 16,
         ),
+        prefixIcon: widget.prefixIcon,
         filled: true,
         fillColor: isDarkMode ? Colors.grey.shade800 : Colors.grey.shade200,
         border: OutlineInputBorder(
@@ -69,6 +74,7 @@ class _CommonTextFieldState extends State<CommonTextField> {
               )
             : null,
       ),
+
       validator: widget.validator,
       onChanged: (value){
         widget.onChanged?.call(value);

@@ -96,7 +96,14 @@ class LoginPage extends ConsumerWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Email-ID: test@gmail.com"),
+                      Text("Use This Credentials  to Login -",
+
+                      style: TextStyle(
+                        fontSize: 12
+                      ),
+                      ),
+                      SizedBox(height: SizeConstants.smallPadding),
+                      Text("Emal-ID: test@gmail.com"),
                       SizedBox(height: SizeConstants.smallPadding),
                       Text("Password: Test@1234")
                     ],

@@ -1,0 +1,2 @@
+/Users/pallavipradhan/Documents/practicals/stoke/android/app/.cxx/RelWithDebInfo/n2r595i3/x86_64/CMakeFiles/edit_cache.dir
+/Users/pallavipradhan/Documents/practicals/stoke/android/app/.cxx/RelWithDebInfo/n2r595i3/x86_64/CMakeFiles/rebuild_cache.dir

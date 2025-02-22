@@ -11,6 +11,7 @@ class HomeNotifier extends ChangeNotifier {
   HomeNotifier(this.useCases);
   final TextEditingController searchController = TextEditingController();
   bool isLoading = false;
+  bool isEmpty=true;
   List<SearchResponseDataModel>? searchResponses = [];
 
   Future<void> searchStocks(BuildContext context) async {
@@ -18,6 +19,7 @@ class HomeNotifier extends ChangeNotifier {
     if (query != "") {
       try {
         isLoading = true;
+        isEmpty=false;
         notifyListeners();
 
         final response = await useCases.executeSearchStocks(query);
@@ -41,6 +43,12 @@ class HomeNotifier extends ChangeNotifier {
         notifyListeners();
         print("$_");
       }
+    }else{
+      searchResponses!.clear();
+      print("----now its emtpy");
+      isEmpty=true;
+      isLoading = false;
+      notifyListeners();
     }
   }
 }

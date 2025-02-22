@@ -10,9 +10,9 @@ class LoginNotifier extends ChangeNotifier {
   final UseCases authUseCase;
   LoginNotifier(this.authUseCase);
   final TextEditingController emailController =
-      TextEditingController(text: "test@gmail.com");
+      TextEditingController();
   final TextEditingController passwordController =
-      TextEditingController(text: "Test@1234");
+      TextEditingController();
   bool isLoading = false;
 
   Future<void> login(BuildContext context) async {
@@ -44,7 +44,8 @@ class LoginNotifier extends ChangeNotifier {
         // Save token
         String token = response?.jwt ?? "";
         await SharedPref.saveToken(token);
-
+        emailController.clear();
+        passwordController.clear();
         // Navigate to home page
         Navigator.pushReplacementNamed(context, '/home');
       } else {

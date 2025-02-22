@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:stoke/common_widgets/common_theme_toggle.dart';
 import 'package:stoke/common_widgets/logout_button.dart';
+import 'package:stoke/core/utills/constants/color_constants.dart';
 import 'package:stoke/core/utills/constants/size_constants.dart';
 import 'package:stoke/core/utills/constants/string_constants.dart';
 import 'package:stoke/core/utills/helpers/app_routes.dart';
@@ -27,6 +28,21 @@ class HomePage extends ConsumerWidget {
               if (homeNotifier.isLoading)
                 const Expanded(
                   child: Center(child: CircularProgressIndicator()),
+                )
+              else if (homeNotifier.isEmpty)
+                Expanded(
+                  child: Center(
+                      child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/market-research.png',
+                        height: 60,
+                        color: ColorConstants.lightPrimaryColor,
+                      ),
+                      Text(StringConstants.searchHint)
+                    ],
+                  )),
                 )
               else if (homeNotifier.searchResponses?.isNotEmpty ?? false)
                 Expanded(
@@ -127,6 +143,7 @@ class HomePage extends ConsumerWidget {
             controller: homeNotifier.searchController,
             hintText: StringConstants.searchHint,
             keyboardType: TextInputType.text,
+            prefixIcon: Icon(Icons.search),
             onChanged: (value) {
               homeNotifier.searchStocks(context);
             },
