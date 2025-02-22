@@ -41,7 +41,7 @@ Completed in 1 day
 - Networking: HTTP package
 - Local Storage: SharedPreferences
 - Architecure - MVVM
-
+- Dependencies - flutter_riverpod, http, shared_preferences, flutter_secure_storage, fl_chart, go_router
 ---
 
 ## 🚀 Setup Instructions
